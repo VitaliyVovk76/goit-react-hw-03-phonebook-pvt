@@ -1,9 +1,9 @@
+import React, { Component } from "react";
+import PropTypes from "prop-types";
 import Button from "../Button";
 import s from "./ContactForm.module.css";
 
-import React, { Component } from "react";
-
-class PhonebookEditor extends Component {
+class ContactForm extends Component {
   state = { name: "", number: "" };
 
   handleChange = (evt) => {
@@ -51,9 +51,6 @@ class PhonebookEditor extends Component {
             required
           />
         </label>
-        {/* <button className={s.button} type="submit">
-          Add contact
-        </button> */}
         <Button
           type="submit"
           id="create"
@@ -65,4 +62,6 @@ class PhonebookEditor extends Component {
   }
 }
 
-export default PhonebookEditor;
+ContactForm.propTypes = { onSubmit: PropTypes.func.isRequired };
+
+export default ContactForm;

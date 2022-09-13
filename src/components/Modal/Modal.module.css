@@ -24,11 +24,8 @@
 
 .btnClose{
     position: absolute;
+    display: inline-flex;
     top:10px;
     right:10px;
-    border-radius: 50%;
-    display: inline-flex;
-    
     padding:5px;
-    background-color: red;
 }

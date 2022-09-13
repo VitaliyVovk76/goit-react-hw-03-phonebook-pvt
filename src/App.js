@@ -4,6 +4,7 @@ import ContactForm from "./components/ContactForm";
 import ContactsList from "./components/ContactsList";
 import Filter from "./components/Filter";
 import Container from "./components/Container";
+import Section from "./components/Section";
 import Title from "./components/Title";
 import Button from "./components/Button";
 import Modal from "./components/Modal";
@@ -79,28 +80,30 @@ class App extends Component {
     const visibleContacts = this.getVisibleContacts();
     return (
       <Container>
-        <Title text="Phonebook" type="first" />
+        <Section>
+          <Title text="Phonebook" type="first" />
 
-        <Button
-          type="button"
-          onClick={this.toggleModal}
-          text="Create contact"
-          id="create"
-        />
-        {showModal && (
-          <Modal onClose={this.toggleModal}>
-            <ContactForm onSubmit={this.addContact} />
-          </Modal>
-        )}
-        {/* <ContactForm onSubmit={this.addContact} /> */}
-
-        <Title text="Contacts" type="second" />
-
-        <Filter value={filter} onChange={this.changeFilter} />
-        <ContactsList
-          contacts={visibleContacts}
-          onDeleteContact={this.deleteContact}
-        />
+          <Button
+            type="button"
+            onClick={this.toggleModal}
+            text="Create contact"
+            id="create"
+          />
+          {showModal && (
+            <Modal onClose={this.toggleModal}>
+              <ContactForm onSubmit={this.addContact} />
+            </Modal>
+          )}
+        </Section>
+        <Section>
+          {" "}
+          <Title text="Contacts" type="second" />
+          <Filter value={filter} onChange={this.changeFilter} />
+          <ContactsList
+            contacts={visibleContacts}
+            onDeleteContact={this.deleteContact}
+          />
+        </Section>
       </Container>
     );
   }

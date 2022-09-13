@@ -6,4 +6,6 @@ const Title = ({ text, type }) => {
   return <h2 className={s[type]}>{text}</h2>;
 };
 
+Title.propTypes = { text: PropTypes.string, type: PropTypes.string };
+
 export default Title;
