@@ -62,6 +62,6 @@ class ContactForm extends Component {
   }
 }
 
-ContactForm.propTypes = { onSubmit: PropTypes.func.isRequired };
+ContactForm.propTypes = { onSubmit: PropTypes.string.isRequired };
 
 export default ContactForm;
